@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5CAAC9;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
+  <tabs>
+    <Tab fx:id="tabUser" text="Ingresar valores">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label id="lblValores" layoutX="24.0" layoutY="45.0" text="Ingrese los valores a ordenar">
+                     <font>
+                        <Font name="Calibri Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField id="txtValores" fx:id="txtValues" layoutX="244.0" layoutY="43.0" />
+                  <Button fx:id="btnSort" layoutX="423.0" layoutY="43.0" mnemonicParsing="false" text="Ordenar">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tabRamdon" text="Generar aleatorio">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="42.0" text="Cantidad de numeros a generar">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="92.0" text="Intervalo de números">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="233.0" layoutY="92.0" text="Desde">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="371.0" layoutY="92.0" text="Hasta">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtAmount" layoutX="284.0" layoutY="43.0" />
+                  <TextField fx:id="txtStart" layoutX="290.0" layoutY="93.0" prefHeight="25.0" prefWidth="69.0" />
+                  <TextField fx:id="txtEnd" layoutX="433.0" layoutY="93.0" prefHeight="25.0" prefWidth="73.0" />
+                  <ComboBox fx:id="cbTypes" layoutX="109.0" layoutY="144.0" prefWidth="150.0" promptText="Forma de generar" />
+                  <Button fx:id="btnGenerate" layoutX="309.0" layoutY="144.0" mnemonicParsing="false" text="Generar números">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
