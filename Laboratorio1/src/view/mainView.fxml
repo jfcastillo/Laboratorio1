@@ -21,8 +21,14 @@
                         <Font name="Calibri Bold" size="17.0" />
                      </font>
                   </Label>
-                  <TextField id="txtValores" fx:id="txtValues" layoutX="244.0" layoutY="43.0" />
-                  <Button fx:id="btnSort" layoutX="423.0" layoutY="43.0" mnemonicParsing="false" text="Ordenar">
+                  <TextField id="txtValores" fx:id="txtValues" layoutX="244.0" layoutY="43.0" prefHeight="25.0" prefWidth="118.0" />
+                  <Button fx:id="btnSort" layoutX="486.0" layoutY="41.0" mnemonicParsing="false" onAction="#sortNumbers" text="Ordenar">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <TextArea fx:id="areaValues" layoutX="28.0" layoutY="101.0" prefHeight="234.0" prefWidth="527.0" />
+                  <Button fx:id="btnAgregar" layoutX="390.0" layoutY="41.0" mnemonicParsing="false" onAction="#addValues" text="Agregar" textOverrun="WORD_ELLIPSIS">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>

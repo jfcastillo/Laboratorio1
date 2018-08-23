@@ -51,6 +51,9 @@ public class MainViewController implements Initializable{
 	    @FXML
 	    private Button btnAgregar;
 	    
+	    @FXML
+	    private TextArea areaValues;
+	    
 	    /**
 	     * Relations--------------
 	     */
@@ -84,8 +87,8 @@ public class MainViewController implements Initializable{
 
 
 
-	public void setTxtValues(TextField txtValues) {
-		this.txtValues = txtValues;
+	public void setTxtValues(String values) {
+		txtValues.setText(values);
 	}
 
 
@@ -144,6 +147,18 @@ public class MainViewController implements Initializable{
 
 
 
+	public TextArea getAreaValues() {
+		return areaValues;
+	}
+
+
+
+	public void setAreaValues(String values) {
+		areaValues.setText(values);;
+	}
+
+
+
 	@FXML
     void generateNumbers(ActionEvent event) {
 		System.out.println("click");
@@ -161,7 +176,22 @@ public class MainViewController implements Initializable{
 		int maxValue = Integer.parseInt(getTxtEnd());
 //		processor.changeSize(amount);
 		processor.bucketSort(maxValue);
-		System.out.println(processor.toString());
+		setAreaNumbers(processor.toString());
+    }
+	
+	@FXML
+    void sortNumbers(ActionEvent event) {
+		processor.sortArrayList();
+		setAreaValues(processor.getNumbersInt().toString());
+
+    }
+	
+
+    @FXML
+    void addValues(ActionEvent event) {
+    	processor.addNumbersInt(Integer.parseInt(getTxtValues()));
+    	setTxtValues("");
+    	setAreaValues(processor.getNumbersInt().toString());
     }
 	
 

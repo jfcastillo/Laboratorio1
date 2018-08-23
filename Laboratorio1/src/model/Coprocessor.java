@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Coprocessor {
 	private int[] arrNumInt;
@@ -55,6 +56,15 @@ public class Coprocessor {
 		}
 
 	}
+	
+	public void sortArrayList() {
+		Collections.sort(numbersInt);
+	}
+
+	public void countingSort() {
+		ArrayList<Integer> test = new ArrayList<>(numbersInt);
+		System.out.println(test.toString());
+	}
 
 	
 	
@@ -72,6 +82,10 @@ public class Coprocessor {
 
 	public void setNumbersFloat(ArrayList<Float> numbersFloat) {
 		this.numbersFloat = numbersFloat;
+	}
+	
+	public void addNumbersInt(int number) {
+		numbersInt.add(number);
 	}
 
 	@Override
