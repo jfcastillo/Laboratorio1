@@ -45,6 +45,12 @@ public class MainViewController implements Initializable{
 	    @FXML
 	    private TextArea areaNumbers;
 	    
+	    @FXML
+	    private Button btnOrderRandom;
+	    
+	    @FXML
+	    private Button btnAgregar;
+	    
 	    /**
 	     * Relations--------------
 	     */
@@ -147,6 +153,15 @@ public class MainViewController implements Initializable{
 		processor.generateRandom(amount, min, max);
 		setAreaNumbers(processor.toString());
 		
+    }
+	
+	@FXML
+    void makeSort(ActionEvent event) {
+		int amount = Integer.parseInt(getTxtAmount());
+		int maxValue = Integer.parseInt(getTxtEnd());
+//		processor.changeSize(amount);
+		processor.bucketSort(maxValue);
+		System.out.println(processor.toString());
     }
 	
 
