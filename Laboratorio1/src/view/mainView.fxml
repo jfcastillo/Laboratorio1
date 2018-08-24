@@ -12,33 +12,9 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #5CAAC9;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
   <tabs>
-    <Tab fx:id="tabUser" text="Ingresar valores">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <Label id="lblValores" layoutX="24.0" layoutY="45.0" text="Ingrese los valores a ordenar">
-                     <font>
-                        <Font name="Calibri Bold" size="17.0" />
-                     </font>
-                  </Label>
-                  <TextField id="txtValores" fx:id="txtValues" layoutX="244.0" layoutY="43.0" prefHeight="25.0" prefWidth="118.0" />
-                  <Button fx:id="btnSort" layoutX="486.0" layoutY="41.0" mnemonicParsing="false" onAction="#sortNumbers" text="Ordenar">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Button>
-                  <TextArea fx:id="areaValues" layoutX="28.0" layoutY="101.0" prefHeight="234.0" prefWidth="527.0" />
-                  <Button fx:id="btnAgregar" layoutX="390.0" layoutY="41.0" mnemonicParsing="false" onAction="#addValues" text="Agregar" textOverrun="WORD_ELLIPSIS">
-                     <font>
-                        <Font name="System Bold" size="13.0" />
-                     </font>
-                  </Button>
-               </children></AnchorPane>
-      </content>
-    </Tab>
     <Tab fx:id="tabRamdon" text="Generar aleatorio">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="372.0" prefWidth="600.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="439.0" prefWidth="600.0">
                <children>
                   <Label layoutX="14.0" layoutY="42.0" text="Cantidad de numeros a generar">
                      <font>
@@ -63,23 +39,48 @@
                   <TextField fx:id="txtAmount" layoutX="284.0" layoutY="43.0" />
                   <TextField fx:id="txtStart" layoutX="290.0" layoutY="93.0" prefHeight="25.0" prefWidth="69.0" />
                   <TextField fx:id="txtEnd" layoutX="433.0" layoutY="93.0" prefHeight="25.0" prefWidth="73.0" />
-                  <ComboBox fx:id="cbTypes" layoutX="72.0" layoutY="146.0" prefWidth="150.0" promptText="Forma de generar" />
-                  <TextArea fx:id="areaNumbers" layoutX="59.0" layoutY="173.0" prefHeight="177.0" prefWidth="480.0" />
-                  <Button fx:id="btnOrderRandom" layoutX="420.0" layoutY="144.0" mnemonicParsing="false" onAction="#makeSort" text="Ordenar">
+                  <ComboBox fx:id="cbTypes" layoutX="72.0" layoutY="161.0" onAction="#verifyOption" prefWidth="150.0" promptText="Forma de generar" />
+                  <TextArea fx:id="areaNumbers" layoutX="60.0" layoutY="186.0" prefHeight="177.0" prefWidth="480.0" />
+                  <Button fx:id="btnOrderRandom" layoutX="420.0" layoutY="159.0" mnemonicParsing="false" onAction="#makeSort" text="Ordenar">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Button>
-                  <Button fx:id="btnGenerate" layoutX="263.0" layoutY="144.0" mnemonicParsing="false" onAction="#generateNumbers" text="Generar números">
+                  <Button fx:id="btnGenerate" layoutX="263.0" layoutY="159.0" mnemonicParsing="false" onAction="#generateNumbers" text="Generar números">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Button>
-                  <Label fx:id="lblPercent" layoutX="244.0" text="Label">
+                  <Label fx:id="lblPercent" layoutX="72.0" layoutY="126.0" text="Porcentaje a ordenar">
                      <font>
-                        <Font size="31.0" />
+                        <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
+                  <TextField fx:id="txtPercent" layoutX="233.0" layoutY="126.0" prefHeight="25.0" prefWidth="89.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tabUser" text="Ingresar valores">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label id="lblValores" layoutX="24.0" layoutY="45.0" text="Ingrese los valores a ordenar">
+                     <font>
+                        <Font name="Calibri Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField id="txtValores" fx:id="txtValues" layoutX="244.0" layoutY="43.0" prefHeight="25.0" prefWidth="118.0" />
+                  <Button fx:id="btnSort" layoutX="486.0" layoutY="41.0" mnemonicParsing="false" onAction="#sortNumbers" text="Ordenar">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <TextArea fx:id="areaValues" layoutX="28.0" layoutY="101.0" prefHeight="234.0" prefWidth="527.0" />
+                  <Button fx:id="btnAgregar" layoutX="390.0" layoutY="41.0" mnemonicParsing="false" onAction="#addValues" text="Agregar" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
                </children></AnchorPane>
       </content>
     </Tab>

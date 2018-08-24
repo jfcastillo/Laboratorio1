@@ -63,6 +63,8 @@ public class MainViewController implements Initializable {
     @FXML
     private Label lblPercent;
 
+    @FXML
+    private TextField txtPercent;
 	/**
 	 * Relations--------------
 	 */
@@ -81,6 +83,7 @@ public class MainViewController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		lblPercent.setVisible(false);
+		txtPercent.setVisible(false);
 		cbTypes.getItems().add("Generar valores ordenados");
 		cbTypes.getItems().add("Generar valores ordenados inversamente");
 		cbTypes.getItems().add("Generar valores en orden aleatorio");
@@ -143,7 +146,7 @@ public class MainViewController implements Initializable {
 
 	@FXML
 	void generateNumbers(ActionEvent event) {
-		lblPercent.setVisible(true);
+		
 
 		try {
 			int amount = Integer.parseInt(getTxtAmount());
@@ -153,7 +156,7 @@ public class MainViewController implements Initializable {
 				System.out.println("opcion 1");
 				option = 1;
 				
-				processor.generateRandom(amount, min, max);
+				processor.generateRandom(amount, min, max, 0);
 				int[] arr = processor.countingSort(processor.getArrNumInt());
 				setAreaNumbers(Arrays.toString(arr));
 //				setAreaNumbers(processor.toString());
@@ -161,10 +164,13 @@ public class MainViewController implements Initializable {
 				option = 2;
 			} else if (getCbTypes().equals(CB_ELEMENTS[2])) {
 				option = 3;
-				processor.generateRandom(amount, min, max);
+				processor.generateRandom(amount, min, max, 0);
 				setAreaNumbers(processor.toString());
 			} else {
 				option = 4;
+				int percent = ((Integer.parseInt(txtPercent.getText()))*amount)/100;
+				int [] arr = processor.generateRandomA(amount, min, max, 0);
+				
 			}
 			
 			
@@ -214,5 +220,13 @@ public class MainViewController implements Initializable {
 		setTxtValues("");
 		setAreaValues(processor.getNumbersInt().toString());
 	}
+	
+	@FXML
+    void verifyOption(ActionEvent event) {
+		if (getCbTypes().equals(CB_ELEMENTS[3])) {
+			lblPercent.setVisible(true);
+			txtPercent.setVisible(true);
+		}
+    }
 
 }
